@@ -57,7 +57,7 @@ meteorNpm.updateDependencies = function (packageName,
     // instances are trying to make this update in parallel, so we rename the
     // directory to something before doing the rm -rf.
     try {
-      files.rename(packageNpmDir, newPackageNpmDir);
+      files.move(packageNpmDir, newPackageNpmDir);
     } catch (e) {
       if (e.code !== 'ENOENT') {
         throw e;

@@ -6,6 +6,8 @@
 
 var assert = require("assert");
 var fs = require("fs");
+fs.move = require('fs-extra').move;
+fs.moveSync = require('fs-extra').moveSync;
 var path = require('path');
 var os = require('os');
 var util = require('util');
@@ -1427,7 +1429,7 @@ wrapFsFunc("readFile", [0], {
 });
 wrapFsFunc("stat", [0]);
 wrapFsFunc("lstat", [0]);
-wrapFsFunc("rename", [0, 1]);
+wrapFsFunc("move", [0, 1]);
 
 // After the outermost files.withCache call returns, the withCacheCache is
 // reset to null so that it does not survive server restarts.

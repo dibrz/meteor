@@ -627,14 +627,14 @@ function atomicallyRewriteFile(path, data, options) {
   const rpath = files.pathJoin(files.pathDirname(path), rname);
   files.writeFile(rpath, data, options);
   try {
-    files.rename(rpath, path);
+    files.move(rpath, path);
   } catch (e) {
     if (e.code === 'EISDIR') {
       // replacing a directory with a file; this is rare (so it can
       // be a slow path) but can legitimately happen if e.g. a developer
       // puts a file where there used to be a directory in their app.
       files.rm_recursive(path);
-      files.rename(rpath, path);
+      files.move(rpath, path);
     } else {
       throw e;
     }

@@ -774,7 +774,7 @@ _.extend(Sandbox.prototype, {
   // Rename something in the sandbox. 'oldName' and 'newName' are as in write().
   rename: function (oldName, newName) {
     var self = this;
-    files.rename(files.pathJoin(self.cwd, oldName),
+    files.move(files.pathJoin(self.cwd, oldName),
                  files.pathJoin(self.cwd, newName));
   },
 

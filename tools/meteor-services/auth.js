@@ -178,7 +178,7 @@ var writeSessionData = function (data) {
 
     // Atomically remove the old file (if any) and replace it with
     // the temporary file we just created.
-    files.rename(tempPath, sessionPath);
+    files.move(tempPath, sessionPath);
     return;
   }
 };
