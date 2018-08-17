@@ -5,9 +5,9 @@ set -u
 
 UNAME=$(uname)
 ARCH=$(uname -m)
-NODE_VERSION=4.4.7
-NPM_VERSION=3.10.2
-MONGO_VERSION=3.2.6
+NODE_VERSION=4.9.1
+NPM_VERSION=5.10.0
+MONGO_VERSION=3.6.3
 
 # save number of processors to define max parallelism for build processes
 # we call that via additional bash process to not get trapped on error
